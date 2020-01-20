@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CommentService {
+
     @Autowired
     private CommentRepository commentRepository;
 
-    public Comment createComment(Comment comment){
-         return   commentRepository.createComment(comment);
+    public void createComment(Comment comment) {
+        commentRepository.createComment(comment);
     }
 }

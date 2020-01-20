@@ -10,10 +10,11 @@ import javax.persistence.PersistenceUnit;
 
 @Repository
 public class CommentRepository {
-    @PersistenceUnit (unitName = "imageHoster")
-   private EntityManagerFactory emf;
 
-    public Comment createComment(Comment comment){
+    @PersistenceUnit(unitName = "imageHoster")
+    private EntityManagerFactory emf;
+
+    public void createComment(Comment comment) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
 
@@ -24,6 +25,6 @@ public class CommentRepository {
         } catch (Exception e) {
             transaction.rollback();
         }
-        return comment;
+
     }
 }

@@ -41,19 +41,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Image> images = new ArrayList<>();
 
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-//    private Comment comments ;
-//
-//    public Comment getComments() {
-//        return comments;
-//    }
-//
-//    public void setComments(Comment comments) {
-//        this.comments = comments;
-//    }
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private List<Comment> comments = new ArrayList<>();
+
     public List<Comment> getComments() {
         return comments;
     }
